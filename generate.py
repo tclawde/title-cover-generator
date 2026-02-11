@@ -117,15 +117,7 @@ def create_title_cover(
         sub_x = (width - sub_width) / 2
         draw.text([sub_x, sub_y], subtitle_text, font=font, fill=text_color)
     
-    # Draw tag
-    tag = "# AI批判"
-    tag_y = height - 160
-    left, top, right, bottom = font.getbbox(tag)
-    tag_width = right - left
-    tag_x = (width - tag_width) / 2
-    draw.text([tag_x, tag_y], tag, font=font, fill=accent_color)
-    
-    # Save
+    # 保存
     img.save(output_path, quality=90, optimize=True)
     print(f"✅ Cover: {output_path} ({len(lines)} lines)")
     
